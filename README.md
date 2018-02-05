@@ -1,3 +1,0 @@
-# myPortfolio
-
-Just My portfolio
