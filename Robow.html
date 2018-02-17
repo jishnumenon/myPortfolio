@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- ==========================
+        Meta Tags 
+    =========================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ==========================
+        Title 
+    =========================== -->
+    <title>RoBow</title>
+    
+    <!-- ==========================
+        Favicons 
+    =========================== -->
+    <link rel="shortcut icon" href="icons/favicon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="icons/apple-touch-icon-114x114.png">
+    
+    <!-- ==========================
+        Fonts 
+    =========================== -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lilita+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  
+
+    <!-- ==========================
+        CSS 
+    =========================== -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.css" rel="stylesheet" type="text/css">
+    <link href="css/creative-brands.css" rel="stylesheet" type="text/css">
+    <link href="css/vertical-carousel.css" rel="stylesheet" type="text/css">
+    <link href="css/custom.css" rel="stylesheet" type="text/css">
+    
+    <!-- ==========================
+        JS 
+    =========================== -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    
+</head>
+<body id="page-top">
+    <a href="#page-top" class="scroll-up scroll"><i class="fa fa-chevron-up"></i></a>
+    <h1>Freelancer</h1>
+    
+    <div id="date" class="date-big">
+        <p>28.</p>
+        <p class="month">July</p>
+    </div>  
+    
+    <!-- ==========================
+        HEADER - START 
+    =========================== -->
+    <section id="blog-header">
+        <div class="container">
+            <div class="row">
+                    <div class="col-sm-4 col-xs-6">
+                       <a href="index.html"><i class="fa fa-arrow-left arrow-left"></i> HOME</a>
+                    </div>
+                    
+                    <div class="col-sm-4">    
+                    </div>
+                    
+                    <div class="col-sm-4 col-xs-6">
+                        <div class="blog-header-menu-right">
+                           <a href="index.html">NEXT ARTICLE <i class="fa fa-arrow-right arrow-right"></i></a>
+                        </div>
+                    </div>      
+            </div>
+        </div>
+    </section>
+    <!-- ==========================
+        HEADER - END 
+    =========================== -->
+    <!-- ==========================
+        BLOGPOST - START 
+    =========================== -->
+    <section id="blog-post">
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-9 blog-content">
+                        <h2>Ro-Bow</h2>
+
+
+                        <p class="date-small">2015/01/01<p>
+
+                        <p>RoBow - Arduino Based Automated Rosin Applying Machine for a Violin Bow</p>
+                        <br>
+
+                        <p><center><iframe src="https://www.youtube.com/embed/EBQiysLXOLA" class="embed-responsive-item" width="1000" height="650"></iframe></center></p>
+
+<p> It is a machine to apply to apply rosin on the violin bow automatically. The user can adjust the speed of the stroke,pressure, duration and location of the stroke. It uses two independent sliders to move the rosin head to the right location.It uses an ultrasonic distance sensor to get the real-time location of the rosin head.the user can vary the speed of the both the Motors with control knobs and displays the rpm and distance values of the rosin head on an LCD display. Whole thing runs on an arduino. 
+</p>
+                       
+    <!-- ==========================
+        BLOGPOST - END 
+    =========================== -->
+    
+                    
+                </div>
+           </div>
+       </div>
+    </section>
+    <!-- ==========================
+        FOOTER - START
+    =========================== -->   
+   
+    <!-- ==========================
+        FOOTER - END 
+    =========================== -->
+    
+    <!-- ==========================
+        JS 
+    =========================== -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/creative-brands.js"></script>
+    <script src="js/jquery.easy-pie-chart.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.countTo.js"></script>
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+    $(function () { 
+        $("input,textarea").jqBootstrapValidation({
+            preventSubmit: true,
+            
+            submitSuccess: function($form, event) {
+                event.preventDefault(); // prevent default submit behaviour
+                // get values from FORM
+                var firstname = $("input#firstname").val();
+                var lastname = $("input#lastname").val();
+                var email = $("input#email").val();
+                var message = $("textarea#message").val();
+    
+                $.ajax({
+                    url: "send.php",
+                    type: "POST",
+                    data: {
+                        firstname: firstname,
+                        lastname: lastname,
+                        email: email,
+                        message: message
+                    },
+                    cache: false,
+                    success: function() {
+                        // Success message
+                        $('.contact-alert').html("<div class='alert alert-success'>");
+                        $('.contact-alert > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'><i class='fa fa-times'></i></button><strong>Your message has been sent.</strong></div>");
+                        //clear all fields
+                        $('#contactForm').trigger("reset");
+                    },
+                    error: function() {
+                        // Fail message
+                        $('.contact-alert').html("<div class='alert alert-danger'>");
+                        $('.contact-alert > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'><i class='fa fa-times'></i></button><strong>Sorry, it seems that my mail server is not responding. Please try again later!</strong></div>");
+                        //clear all fields
+                        $('#contactForm').trigger("reset");
+                    },
+                })
+            }
+        });
+    });
+    </script>
+</body>
+</html>
